@@ -1,0 +1,13 @@
+# Секреты — никогда не в Git
+.env
+
+# Служебные файлы Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Служебные файлы VS Code
+.vscode/
+
+# Служебные файлы macOS (на всякий случай)
+.DS_Store
