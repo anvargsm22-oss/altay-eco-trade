@@ -92,7 +92,7 @@
         <!-- Правая колонка — карточки доверия -->
         <div class="grid grid-cols-2 gap-4">
 
-          <div class="bg-white/70 border border-[#d4c9b5] rounded-2xl p-6 flex flex-col gap-3">
+          <div class="bg-white/70 border border-[#d4c9b5] rounded-2xl p-6 flex flex-col gap-3 card-hover fade-in">
             <div class="w-10 h-10 bg-[#4a6741]/10 rounded-xl flex items-center justify-center">
               <i data-lucide="wrench" class="w-5 h-5 text-[#4a6741]"></i>
             </div>
@@ -100,7 +100,7 @@
             <p class="text-base text-[#8c7b6b] leading-relaxed">Современные установки для дезинфекции и фумигации</p>
           </div>
 
-          <div class="bg-[#4a6741] rounded-2xl p-6 flex flex-col gap-3">
+          <div class="bg-[#4a6741] rounded-2xl p-6 flex flex-col gap-3 card-hover fade-in">
             <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
               <i data-lucide="file-badge" class="w-5 h-5 text-white"></i>
             </div>
@@ -133,19 +133,19 @@
   <section class="py-12 px-6 bg-[#4a6741]">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <div class="text-4xl font-700 text-white mb-1">10+</div>
+        <div class="fade-in">
+          <div class="text-4xl font-700 text-white mb-1 counter" data-target="10" data-suffix="+">10+</div>
           <div class="text-sm text-white/70">лет на рынке</div>
         </div>
-        <div>
-          <div class="text-4xl font-700 text-white mb-1">31</div>
+        <div class="fade-in">
+          <div class="text-4xl font-700 text-white mb-1 counter" data-target="31" data-suffix="">31</div>
           <div class="text-sm text-white/70">районный отдел</div>
         </div>
-        <div>
-          <div class="text-4xl font-700 text-white mb-1">4</div>
+        <div class="fade-in">
+          <div class="text-4xl font-700 text-white mb-1 counter" data-target="4" data-suffix="">4</div>
           <div class="text-sm text-white/70">вида услуг</div>
         </div>
-        <div>
+        <div class="fade-in">
           <div class="text-4xl font-700 text-white mb-1">100%</div>
           <div class="text-sm text-white/70">официальные документы</div>
         </div>
@@ -164,7 +164,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- КФО -->
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors card-hover fade-in">
           <div class="w-12 h-12 bg-[#4a6741]/10 rounded-xl flex items-center justify-center mb-6">
             <i data-lucide="sprout" class="w-6 h-6 text-[#4a6741]"></i>
           </div>
@@ -195,7 +195,7 @@
         </div>
 
         <!-- ДДД -->
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors card-hover fade-in">
           <div class="w-12 h-12 bg-[#4a6741]/10 rounded-xl flex items-center justify-center mb-6">
             <i data-lucide="shield-check" class="w-6 h-6 text-[#4a6741]"></i>
           </div>
@@ -225,7 +225,7 @@
         </div>
 
         <!-- Дезинфекция транспорта -->
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors card-hover fade-in">
           <div class="w-12 h-12 bg-[#4a6741]/10 rounded-xl flex items-center justify-center mb-6">
             <i data-lucide="truck" class="w-6 h-6 text-[#4a6741]"></i>
           </div>
@@ -256,7 +256,7 @@
         </div>
 
         <!-- Термообеззараживание -->
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] hover:border-[#4a6741]/40 transition-colors card-hover fade-in">
           <div class="w-12 h-12 bg-[#4a6741]/10 rounded-xl flex items-center justify-center mb-6">
             <i data-lucide="flame" class="w-6 h-6 text-[#4a6741]"></i>
           </div>
@@ -309,7 +309,7 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm">
+        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm card-hover fade-in">
           <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
             <i data-lucide="award" class="w-6 h-6 text-white"></i>
           </div>
@@ -317,7 +317,7 @@
           <p class="text-base text-white/60 leading-relaxed">Работаем в соответствии с требованиями Роспотребнадзора</p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm">
+        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm card-hover fade-in">
           <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
             <i data-lucide="file-check" class="w-6 h-6 text-white"></i>
           </div>
@@ -325,7 +325,7 @@
           <p class="text-base text-white/60 leading-relaxed">Выдаём акты и заключения установленного образца</p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm">
+        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm card-hover fade-in">
           <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
             <i data-lucide="users" class="w-6 h-6 text-white"></i>
           </div>
@@ -333,7 +333,7 @@
           <p class="text-base text-white/60 leading-relaxed">Сертифицированные дезинфекторы с многолетним стажем</p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm">
+        <div class="p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm card-hover fade-in">
           <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
             <i data-lucide="layers" class="w-6 h-6 text-white"></i>
           </div>
@@ -354,7 +354,7 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5]">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] card-hover fade-in">
           <div class="text-5xl text-[#4a6741]/30 font-700 leading-none mb-4">"</div>
           <p class="text-[#4a3728] leading-relaxed mb-6">Заказываем обработку скотовозов перед каждым рейсом. Бригада приезжает вовремя, акт оформляют корректно — на постах вопросов нет.</p>
           <div class="flex items-center gap-3">
@@ -366,7 +366,7 @@
           </div>
         </div>
 
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5]">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] card-hover fade-in">
           <div class="text-5xl text-[#4a6741]/30 font-700 leading-none mb-4">"</div>
           <p class="text-[#4a3728] leading-relaxed mb-6">Сотрудничаем второй год. Документы по форме — ни одной претензии при отгрузках на экспорт.</p>
           <div class="flex items-center gap-3">
@@ -378,7 +378,7 @@
           </div>
         </div>
 
-        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5]">
+        <div class="bg-[#f5f0e8] rounded-2xl p-8 border border-[#d4c9b5] card-hover fade-in">
           <div class="text-5xl text-[#4a6741]/30 font-700 leading-none mb-4">"</div>
           <p class="text-[#4a3728] leading-relaxed mb-6">Делают плановую дезинфекцию склада и зернохранилища. Цена фиксированная, всё прозрачно. Рекомендую коллегам.</p>
           <div class="flex items-center gap-3">
@@ -401,7 +401,7 @@
         <h2 class="text-4xl font-700 text-white mb-4">Нужна консультация или расчёт стоимости?</h2>
         <p class="text-xl text-white/70 mb-10">Оставьте заявку — свяжемся в течение рабочего дня</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="contacts.html" class="bg-white text-[#4a6741] font-600 px-8 py-4 rounded-xl text-lg hover:bg-[#f5f0e8] transition-colors">
+          <a href="contacts.html" class="bg-white text-[#4a6741] font-600 px-8 py-4 rounded-xl text-lg hover:bg-[#f5f0e8] transition-colors btn-pulse">
             Оставить заявку
           </a>
           <a href="tel:+7XXXXXXXXXX" class="border border-white/30 text-white font-500 px-8 py-4 rounded-xl text-lg hover:border-white/60 transition-colors">
@@ -430,6 +430,77 @@
 
   <script>
     lucide.createIcons();
+
+    // Появление секций при прокрутке
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Счётчики цифр в статистике
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1500;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + suffix;
+      }, 16);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
   </script>
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .fade-in:nth-child(3) { transition-delay: 0.2s; }
+    .fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(74, 103, 65, 0.15);
+    }
+
+    @keyframes pulse-cta {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74, 103, 65, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(74, 103, 65, 0); }
+    }
+    .btn-pulse {
+      animation: pulse-cta 2.5s infinite;
+    }
+  </style>
 </body>
 </html>
