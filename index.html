@@ -446,22 +446,122 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="cta" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="rounded-3xl px-12 py-16 text-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1694105073180-9e7dc1a83fbe?w=1600&q=80&auto=format&fit=crop'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-[#4a6741]/80 rounded-3xl" aria-hidden="true"></div>
-        <div class="relative z-10">
-        <h2 class="text-4xl font-700 text-white mb-4">Нужна консультация или расчёт стоимости?</h2>
-        <p class="text-xl text-white/70 mb-10">Оставьте заявку — свяжемся в течение рабочего дня</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#cta" class="bg-white text-[#4a6741] font-600 px-8 py-4 rounded-xl text-lg hover:bg-[#f5f0e8] transition-colors btn-pulse">
-            Оставить заявку
-          </a>
-          <a href="tel:+7XXXXXXXXXX" class="border border-white/30 text-white font-500 px-8 py-4 rounded-xl text-lg hover:border-white/60 transition-colors">
-            Позвонить нам
-          </a>
+  <!-- Контакты -->
+  <section id="cta" class="py-24 px-6 relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1694105073180-9e7dc1a83fbe?w=1600&q=80&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-[#f5f0e8]/90" aria-hidden="true"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+
+      <div class="mb-12 text-center">
+        <h2 class="text-4xl font-700 text-[#2d2318] mb-3">Связаться с нами</h2>
+        <p class="text-lg text-[#7a5c47]">Оставьте заявку или позвоните напрямую — ответим в течение рабочего дня</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        <!-- Форма заявки -->
+        <div class="bg-white rounded-3xl p-8 shadow-lg">
+          <h3 class="text-xl font-700 text-[#4a6741] mb-2">Оставить заявку</h3>
+          <p class="text-sm text-[#8c7b6b] mb-6">Заполните форму — перезвоним, уточним задачу и рассчитаем стоимость</p>
+          <form id="contactForm" class="flex flex-col gap-4" novalidate>
+            <div class="flex flex-col gap-1">
+              <label class="text-sm font-600 text-[#2d2318]">Имя *</label>
+              <input type="text" name="name" placeholder="Как к вам обращаться" required
+                class="px-4 py-3 border border-[#d4c9b5] rounded-xl text-sm font-400 text-[#2d2318] bg-[#faf8f4] outline-none focus:border-[#4a6741] transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="text-sm font-600 text-[#2d2318]">Телефон *</label>
+              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required
+                class="px-4 py-3 border border-[#d4c9b5] rounded-xl text-sm font-400 text-[#2d2318] bg-[#faf8f4] outline-none focus:border-[#4a6741] transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="text-sm font-600 text-[#2d2318]">Услуга</label>
+              <select name="service"
+                class="px-4 py-3 border border-[#d4c9b5] rounded-xl text-sm font-400 text-[#2d2318] bg-[#faf8f4] outline-none focus:border-[#4a6741] transition-colors">
+                <option value="">— Выберите услугу —</option>
+                <option value="kfo">КФО (карантинное фитосанитарное обеззараживание)</option>
+                <option value="ddd">ДДД (дезинфекция, дезинсекция, дератизация)</option>
+                <option value="transport">Обработка транспортных средств</option>
+                <option value="termo">Термическое обеззараживание и клеймение</option>
+                <option value="other">Другое / консультация</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="text-sm font-600 text-[#2d2318]">Комментарий</label>
+              <textarea name="message" rows="3" placeholder="Опишите объект, площадь, особенности задачи..."
+                class="px-4 py-3 border border-[#d4c9b5] rounded-xl text-sm font-400 text-[#2d2318] bg-[#faf8f4] outline-none focus:border-[#4a6741] transition-colors resize-none"></textarea>
+            </div>
+            <p class="text-xs text-[#8c7b6b]">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+            <button type="submit" class="bg-[#4a6741] text-white font-600 py-4 rounded-xl text-base hover:bg-[#3d5836] transition-colors btn-pulse">
+              Отправить заявку
+            </button>
+            <div id="formSuccess" class="hidden bg-[#e8f5ee] border border-[#4a6741] rounded-xl px-5 py-4 text-[#4a6741] font-600 text-sm text-center">
+              Заявка принята! Свяжемся с вами в течение рабочего дня.
+            </div>
+          </form>
         </div>
+
+        <!-- Контактная информация -->
+        <div class="flex flex-col gap-4">
+
+          <div class="bg-white rounded-2xl p-5 shadow-md flex gap-4 items-center">
+            <div class="w-12 h-12 bg-[#e8f5ee] rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="phone" class="w-5 h-5 text-[#4a6741]"></i>
+            </div>
+            <div>
+              <p class="text-xs font-600 text-[#8c7b6b] mb-1">Телефон</p>
+              <a href="tel:+79609360461" class="text-lg font-700 text-[#2d2318] hover:text-[#4a6741] transition-colors">+7 (960) 936-04-61</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-md flex gap-4 items-center">
+            <div class="w-12 h-12 bg-[#e8f5ee] rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="mail" class="w-5 h-5 text-[#4a6741]"></i>
+            </div>
+            <div>
+              <p class="text-xs font-600 text-[#8c7b6b] mb-1">Электронная почта</p>
+              <a href="mailto:agrodomaltay@bk.ru" class="text-lg font-700 text-[#2d2318] hover:text-[#4a6741] transition-colors">agrodomaltay@bk.ru</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-md flex gap-4 items-center">
+            <div class="w-12 h-12 bg-[#e8f5ee] rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[#4a6741]"></i>
+            </div>
+            <div>
+              <p class="text-xs font-600 text-[#8c7b6b] mb-1">Адрес</p>
+              <p class="text-lg font-700 text-[#2d2318]">г. Барнаул, Алтайский край</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-md flex gap-4 items-center">
+            <div class="w-12 h-12 bg-[#e8f5ee] rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="globe" class="w-5 h-5 text-[#4a6741]"></i>
+            </div>
+            <div>
+              <p class="text-xs font-600 text-[#8c7b6b] mb-1">Зона обслуживания</p>
+              <p class="text-lg font-700 text-[#2d2318]">Весь Алтайский край</p>
+            </div>
+          </div>
+
+          <!-- Режим работы -->
+          <div class="bg-white rounded-2xl p-6 shadow-md">
+            <p class="text-sm font-700 text-[#4a6741] mb-4">Режим работы</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex justify-between text-sm border-b border-[#ede6d6] pb-2">
+                <span class="text-[#7a5c47]">Понедельник — Пятница</span>
+                <span class="font-700 text-[#2d2318]">8:00 — 18:00</span>
+              </div>
+              <div class="flex justify-between text-sm border-b border-[#ede6d6] pb-2">
+                <span class="text-[#7a5c47]">Суббота</span>
+                <span class="font-700 text-[#2d2318]">9:00 — 15:00</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-[#7a5c47]">Воскресенье</span>
+                <span class="font-700 text-[#8c7b6b]">Выходной</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -542,6 +642,19 @@
       el.style.width = '0%';
       el.style.transition = 'width 1.2s ease';
       barObserver.observe(el);
+    });
+
+    // Форма заявки
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.querySelector('[name="name"]').value.trim();
+      const phone = this.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) {
+        alert('Пожалуйста, заполните имя и телефон.');
+        return;
+      }
+      document.getElementById('formSuccess').classList.remove('hidden');
+      this.reset();
     });
   </script>
 
