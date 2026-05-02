@@ -50,7 +50,9 @@
   </header>
 
   <!-- Hero -->
-  <section class="pt-20 pb-24 px-6 relative overflow-hidden">
+  <section class="pt-20 pb-24 px-6 relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <!-- Полупрозрачный оверлей поверх фото -->
+    <div class="absolute inset-0 bg-[#f5f0e8]/88" aria-hidden="true"></div>
     <!-- Декоративные листья фон -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.07]" aria-hidden="true">
       <svg class="absolute top-0 right-0 w-[600px] h-[600px]" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,8 +132,9 @@
   </section>
 
   <!-- Статистика -->
-  <section class="py-12 px-6 bg-[#4a6741]">
-    <div class="max-w-6xl mx-auto">
+  <section class="py-12 px-6 relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=1600&q=70&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-[#4a6741]/90" aria-hidden="true"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div class="fade-in">
           <div class="text-4xl font-700 text-white mb-1 counter" data-target="8" data-suffix="+">8+</div>
@@ -444,7 +447,9 @@
   <!-- CTA -->
   <section id="cta" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="bg-[#4a6741] rounded-3xl px-12 py-16 text-center">
+      <div class="rounded-3xl px-12 py-16 text-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1600&q=70&auto=format&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-[#4a6741]/85 rounded-3xl" aria-hidden="true"></div>
+        <div class="relative z-10">
         <h2 class="text-4xl font-700 text-white mb-4">Нужна консультация или расчёт стоимости?</h2>
         <p class="text-xl text-white/70 mb-10">Оставьте заявку — свяжемся в течение рабочего дня</p>
         <div class="flex flex-wrap justify-center gap-4">
@@ -454,6 +459,7 @@
           <a href="tel:+7XXXXXXXXXX" class="border border-white/30 text-white font-500 px-8 py-4 rounded-xl text-lg hover:border-white/60 transition-colors">
             Позвонить нам
           </a>
+        </div>
         </div>
       </div>
     </div>
