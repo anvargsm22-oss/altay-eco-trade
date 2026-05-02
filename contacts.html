@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты — АлтайЭкоТрейд</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contacts-hero { background: linear-gradient(135deg, #145530 0%, #1a6b3a 50%, #218f4d 100%); color: #fff; padding: 72px 0 60px; }
+    .contacts-hero__title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; margin-bottom: 16px; }
+    .contacts-hero__desc { font-size: 1.05rem; opacity: .88; max-width: 560px; }
+
+    .contacts-main { padding: 72px 0 80px; }
+    .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+    /* Форма */
+    .contact-form-wrap { }
+    .contact-form-wrap h2 { font-size: 1.4rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+    .contact-form-wrap > p { font-size: .95rem; color: var(--color-muted); margin-bottom: 28px; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: .9rem; font-weight: 600; color: var(--color-text); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 11px 14px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      font-size: .95rem;
+      font-family: inherit;
+      color: var(--color-text);
+      background: var(--color-white);
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--color-primary); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-note { font-size: .8rem; color: var(--color-muted); margin-top: -4px; }
+
+    .form-submit { margin-top: 4px; }
+    .form-success { display: none; background: #e8f5ee; border: 1.5px solid var(--color-primary); border-radius: var(--radius); padding: 16px 20px; color: var(--color-primary); font-weight: 600; font-size: .95rem; margin-top: 12px; }
+
+    /* Контакты справа */
+    .contact-info h2 { font-size: 1.4rem; font-weight: 700; color: var(--color-primary); margin-bottom: 28px; }
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 14px; padding: 22px 24px; box-shadow: var(--shadow); display: flex; gap: 16px; align-items: flex-start; }
+    .contact-card__icon { width: 44px; height: 44px; border-radius: 12px; background: #e8f5ee; color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .contact-card h4 { font-size: .9rem; font-weight: 600; color: var(--color-muted); margin-bottom: 4px; }
+    .contact-card p, .contact-card a { font-size: 1rem; font-weight: 600; color: var(--color-text); }
+    .contact-card a:hover { color: var(--color-primary); }
+
+    .work-hours { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 14px; padding: 24px; box-shadow: var(--shadow); margin-top: 16px; }
+    .work-hours h4 { font-size: .95rem; font-weight: 700; color: var(--color-primary); margin-bottom: 14px; }
+    .work-hours-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--color-border); font-size: .9rem; }
+    .work-hours-row:last-child { border-bottom: none; }
+    .work-hours-row span:last-child { font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__logo">
+        <span class="logo-main">АлтайЭкоТрейд</span>
+        <span class="logo-sub">ООО</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="about.html" class="nav__link">О компании</a>
+        <a href="gallery.html" class="nav__link">Галерея</a>
+        <a href="contacts.html" class="nav__link nav__link--active">Контакты</a>
+      </nav>
+      <a href="contacts.html" class="btn btn--header">Оставить заявку</a>
+    </div>
+  </header>
+
+  <!-- Герой -->
+  <section class="contacts-hero">
+    <div class="container">
+      <h1 class="contacts-hero__title">Контакты и заявка</h1>
+      <p class="contacts-hero__desc">Оставьте заявку или свяжитесь с нами напрямую — ответим в течение рабочего дня.</p>
+    </div>
+  </section>
+
+  <!-- Основной блок -->
+  <section class="contacts-main">
+    <div class="container">
+      <div class="contacts-grid">
+
+        <!-- Форма -->
+        <div class="contact-form-wrap">
+          <h2>Оставить заявку</h2>
+          <p>Заполните форму — перезвоним, уточним задачу и рассчитаем стоимость</p>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Имя *</label>
+              <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Услуга</label>
+              <select id="service" name="service">
+                <option value="">— Выберите услугу —</option>
+                <option value="ddd">ДДД (дезинфекция, дезинсекция, дератизация)</option>
+                <option value="kfo">КФО (карантинное фитосанитарное обеззараживание)</option>
+                <option value="termo">Термическое обеззараживание и клеймение</option>
+                <option value="other">Другое / консультация</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Комментарий</label>
+              <textarea id="message" name="message" placeholder="Опишите объект, площадь, особенности задачи..."></textarea>
+            </div>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+            <div class="form-submit">
+              <button type="submit" class="btn btn--primary btn--large" style="width:100%">Отправить заявку</button>
+            </div>
+            <div class="form-success" id="formSuccess">
+              Заявка принята! Свяжемся с вами в течение рабочего дня.
+            </div>
+          </form>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="contact-info">
+          <h2>Наши контакты</h2>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-card__icon">📞</div>
+              <div>
+                <h4>Телефон</h4>
+                <a href="tel:+73852000000">+7 (3852) 00-00-00</a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card__icon">✉️</div>
+              <div>
+                <h4>Электронная почта</h4>
+                <a href="mailto:info@altay-eco-trade.ru">info@altay-eco-trade.ru</a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card__icon">📍</div>
+              <div>
+                <h4>Адрес</h4>
+                <p>г. Барнаул, Алтайский край</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card__icon">🌐</div>
+              <div>
+                <h4>Зона обслуживания</h4>
+                <p>Весь Алтайский край</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-hours">
+            <h4>Режим работы</h4>
+            <div class="work-hours-row">
+              <span>Понедельник — Пятница</span>
+              <span>8:00 — 18:00</span>
+            </div>
+            <div class="work-hours-row">
+              <span>Суббота</span>
+              <span>9:00 — 15:00</span>
+            </div>
+            <div class="work-hours-row">
+              <span>Воскресенье</span>
+              <span>Выходной</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-main">АлтайЭкоТрейд</span>
+        <span class="footer__copy">© 2025 ООО «АлтайЭкоТрейд»</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      if (!name || !phone) {
+        alert('Пожалуйста, заполните имя и телефон.');
+        return;
+      }
+      document.getElementById('formSuccess').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>

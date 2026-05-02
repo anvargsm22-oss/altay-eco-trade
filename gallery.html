@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Галерея — АлтайЭкоТрейд</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .gallery-hero { background: linear-gradient(135deg, #145530 0%, #1a6b3a 50%, #218f4d 100%); color: #fff; padding: 72px 0 60px; }
+    .gallery-hero__title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; margin-bottom: 16px; }
+    .gallery-hero__desc { font-size: 1.05rem; opacity: .88; max-width: 560px; }
+
+    .gallery-main { padding: 72px 0 80px; }
+
+    .gallery-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .filter-btn { padding: 8px 20px; border-radius: 30px; border: 1.5px solid var(--color-border); background: var(--color-white); color: var(--color-muted); font-size: .9rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
+    .filter-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .filter-btn.active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .gallery-item { border-radius: 14px; overflow: hidden; background: var(--color-white); border: 1px solid var(--color-border); box-shadow: var(--shadow); cursor: pointer; transition: transform var(--transition), box-shadow var(--transition); }
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+
+    .gallery-item__placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e8f5ee, #d4eedd); font-size: 3.5rem; color: var(--color-primary); opacity: .5; }
+    .gallery-item__body { padding: 16px 20px 20px; }
+    .gallery-item__tag { display: inline-block; background: #e8f5ee; color: var(--color-primary); font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 8px; }
+    .gallery-item__title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .gallery-item__desc { font-size: .88rem; color: var(--color-muted); }
+
+    .gallery-coming { text-align: center; padding: 64px 0 0; }
+    .gallery-coming__icon { font-size: 4rem; margin-bottom: 16px; opacity: .5; }
+    .gallery-coming h3 { font-size: 1.3rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+    .gallery-coming p { color: var(--color-muted); max-width: 440px; margin: 0 auto; }
+
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__logo">
+        <span class="logo-main">АлтайЭкоТрейд</span>
+        <span class="logo-sub">ООО</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="about.html" class="nav__link">О компании</a>
+        <a href="gallery.html" class="nav__link nav__link--active">Галерея</a>
+        <a href="contacts.html" class="nav__link">Контакты</a>
+      </nav>
+      <a href="contacts.html" class="btn btn--header">Оставить заявку</a>
+    </div>
+  </header>
+
+  <section class="gallery-hero">
+    <div class="container">
+      <h1 class="gallery-hero__title">Галерея работ</h1>
+      <p class="gallery-hero__desc">Фотографии с объектов — процесс обработки, оборудование, результаты выполненных работ.</p>
+    </div>
+  </section>
+
+  <section class="gallery-main">
+    <div class="container">
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Все работы</button>
+        <button class="filter-btn" data-filter="ddd">ДДД</button>
+        <button class="filter-btn" data-filter="kfo">КФО</button>
+        <button class="filter-btn" data-filter="termo">Термообработка</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-item" data-category="ddd">
+          <div class="gallery-item__placeholder">🦟</div>
+          <div class="gallery-item__body">
+            <span class="gallery-item__tag">ДДД</span>
+            <div class="gallery-item__title">Дезинсекция склада</div>
+            <div class="gallery-item__desc">Обработка зернового склада от вредителей. Площадь 1200 м²</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="kfo">
+          <div class="gallery-item__placeholder">🌾</div>
+          <div class="gallery-item__body">
+            <span class="gallery-item__tag">КФО</span>
+            <div class="gallery-item__title">Фумигация зерна</div>
+            <div class="gallery-item__desc">Карантинное обеззараживание партии пшеницы перед экспортом</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="ddd">
+          <div class="gallery-item__placeholder">🐀</div>
+          <div class="gallery-item__body">
+            <span class="gallery-item__tag">ДДД</span>
+            <div class="gallery-item__title">Дератизация фермы</div>
+            <div class="gallery-item__desc">Комплексная защита животноводческого объекта от грызунов</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="termo">
+          <div class="gallery-item__placeholder">🔥</div>
+          <div class="gallery-item__body">
+            <span class="gallery-item__tag">Термообработка</span>
+            <div class="gallery-item__title">Термическое обеззараживание поддонов</div>
+            <div class="gallery-item__desc">Высокотемпературная обработка деревянных поддонов с нанесением клейма</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="kfo">
+          <div class="gallery-item__placeholder">🚛</div>
+          <div class="gallery-item__body">
+            <span class="gallery-item__tag">КФО</span>
+            <div class="gallery-item__title">Обеззараживание транспорта</div>
+            <div class="gallery-item__desc">Фитосанитарная обработка транспортного средства перед загрузкой продукции</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="ddd">
+          <div class="gallery-item__placeholder">🏭</div>
+          <div class="gallery-item__body">
+            <span class="gallery-item__tag">ДДД</span>
+            <div class="gallery-item__title">Дезинфекция производства</div>
+            <div class="gallery-item__desc">Обработка пищевого производства. Сертифицированные препараты, акт в день работ</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gallery-coming">
+        <div class="gallery-coming__icon">📷</div>
+        <h3>Фотографии пополняются</h3>
+        <p>Мы регулярно добавляем снимки с объектов. Свяжитесь с нами, чтобы узнать подробнее о конкретном виде работ.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="cta__title">Нужна консультация по объекту?</h2>
+      <p class="cta__desc">Опишите задачу — подберём оптимальное решение</p>
+      <a href="contacts.html" class="btn btn--primary btn--large">Оставить заявку</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-main">АлтайЭкоТрейд</span>
+        <span class="footer__copy">© 2025 ООО «АлтайЭкоТрейд»</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
