@@ -43,9 +43,23 @@
         <a href="#reviews" class="text-sm font-500 text-[#4a3728] hover:text-[#4a6741] transition-colors">Отзывы</a>
         <a href="#cta" class="text-sm font-500 text-[#4a3728] hover:text-[#4a6741] transition-colors">Контакты</a>
       </nav>
-      <a href="#cta" class="bg-[#4a6741] hover:bg-[#3d5836] text-white text-sm font-600 px-5 py-2.5 rounded-lg transition-colors">
+      <a href="#cta" class="hidden md:inline-flex bg-[#4a6741] hover:bg-[#3d5836] text-white text-sm font-600 px-5 py-2.5 rounded-lg transition-colors">
         Оставить заявку
       </a>
+      <!-- Бургер для мобильных -->
+      <button id="burgerBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Меню">
+        <span class="block w-6 h-0.5 bg-[#4a3728] transition-all"></span>
+        <span class="block w-6 h-0.5 bg-[#4a3728] transition-all"></span>
+        <span class="block w-6 h-0.5 bg-[#4a3728] transition-all"></span>
+      </button>
+    </div>
+    <!-- Мобильное меню -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-[#ede6d6] bg-[#f5f0e8] px-6 py-4 flex flex-col gap-4">
+      <a href="#services" class="text-base font-500 text-[#4a3728] hover:text-[#4a6741] transition-colors" onclick="closeMobileMenu()">Услуги</a>
+      <a href="#why" class="text-base font-500 text-[#4a3728] hover:text-[#4a6741] transition-colors" onclick="closeMobileMenu()">О нас</a>
+      <a href="#reviews" class="text-base font-500 text-[#4a3728] hover:text-[#4a6741] transition-colors" onclick="closeMobileMenu()">Отзывы</a>
+      <a href="#cta" class="text-base font-500 text-[#4a3728] hover:text-[#4a6741] transition-colors" onclick="closeMobileMenu()">Контакты</a>
+      <a href="#cta" class="bg-[#4a6741] text-white text-sm font-600 px-5 py-3 rounded-lg text-center mt-2" onclick="closeMobileMenu()">Оставить заявку</a>
     </div>
   </header>
 
@@ -644,6 +658,16 @@
       el.style.transition = 'width 1.2s ease';
       barObserver.observe(el);
     });
+
+    // Бургер-меню
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
 
     // Форма заявки
     document.getElementById('contactForm').addEventListener('submit', function(e) {
